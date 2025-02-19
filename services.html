@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Solutions - NeuralEdge AI</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #00f7ff;
+        }
+
+        /* Page Content */
+        .page-container {
+            padding: 100px 5%;
+            text-align: left;
+        }
+
+        .services {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00f7ff;
+        }
+
+        /* Service Categories with Background Images */
+        .service-category {
+            margin-bottom: 50px;
+            padding: 50px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+
+        .ai-content {
+            background-image: url('social-3-2.jpg');
+        }
+
+        .chatbots {
+            background-image: url('IMAGE.png');
+        }
+
+        .automation {
+            background-image: url('STARTUP.webp');
+        }
+
+        .service-category h3 {
+            font-size: 2rem;
+            color: #ff007f;
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        /* Card Styling */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 30px;
+            width: 400px;
+            height: auto;
+            text-align: center;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card p {
+            font-size: 1rem;
+            font-weight: normal;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 247, 255, 0.5);
+        }
+
+        .card a {
+            display: block;
+            margin-top: 10px;
+            color: #00f7ff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>NeuralEdge AI</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="services page-container">
+
+
+
+        <section class="service-category automation">
+            <h3>AI Automation & Multi-Agent Systems</h3>
+            <div class="card-container">
+                <div class="card">AI Event Manager<p> Using Multi-agent and build the system that help to manage the event</p><a href="https://github.com/onkar-2006/AI-Event-Manager">GitHub Repo</a></div>
+                <div class="card">AI trip Planner<p>using the Multi-Agent build the system that help to create user trip plan in any place</p><a href="https://github.com/onkar-2006/AI-Trip-planner">GitHub Repo</a></div>
+                <div class="card">AI Auto Mail Replier<p>the reply is given by the Agent </p><a href="https://github.com/onkar-2006/AI-auto-Mail-Replier">GitHub Repo</a></div>
+            </div>
+        </section>
+
+        <section class="service-category chatbots">
+            <h3>Chatbots & Virtual Assistants</h3>
+            <div class="card-container">
+                <div class="card">Custom AI Chatbots<p>AI question and answer assistant.</p><a href="https://github.com/onkar-2006/RAG-Application-QA">GitHub Repo</a></div>
+                <div class="card">youtube text summarizer<p>for the blog post of youtube video genrate the summary</p><a href="https://github.com/onkar-2006/youtube_text_summarization">GitHub Repo</a></div>
+                <div class="card">AI Financial Advisor<p>using the crewai build the Multi-Agent that help in Financial investment</p><a href="https://github.com/onkar-2006/AI-finance-advisor">GitHub Repo</a></div>
+            </div>
+        </section>
+
+        <section class="service-category ai-content">
+            <h3>ML and the Deep learning Soln</h3>
+            <div class="card-container">
+                <div class="card">AI-Powered-Adherence-Monitoring-and-Improvement-Platform<p>it help  to manage your medication using the AI </p><a href="https://github.com/onkar-2006/AI-Powered-Adherence-Monitoring-and-Improvement-Platform">GitHub Repo</a></div>
+                <div class="card">the AI health assistant<p>the  AI-Powered system that detect the desiase and based on result mentor to user </p><a href="https://github.com/onkar-2006/MANOJAVAM_the_health_predictor">GitHub Repo</a></div>
+                <div class="card"> AI-Powered Plant disease Adherence-Monitoring-and-Improvement-Platform<p>help to the farmer detect the disease by just uploading the image and also give the precaution using the ai</p><a href="https://github.com/onkar-2006/plant-disease-detecting-platform">GitHub Repo</a></div>
+            </div>
+        </section>
+
+        
+    </section>
+</body>
+</html>

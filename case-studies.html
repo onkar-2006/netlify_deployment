@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - NeuralEdge AI</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #00f7ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+            background: url('STARTUP.webp') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 600px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00f7ff, #ff00c8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .case-studies h2 {
+            font-size: 2rem;
+            color: #00f7ff;
+        }
+
+        .case-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .case-item {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .case-item:hover {
+            transform: scale(1.05);
+        }
+
+        .case-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .case-title {
+            font-size: 1.5rem;
+            color: #00f7ff;
+        }
+
+        .case-desc {
+            font-size: 1rem;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 5%;
+            background: #111;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+
+        .footer-container div {
+            width: 25%;
+            min-width: 250px;
+        }
+
+        .footer-about h3,
+        .footer-links h3,
+        .footer-social h3 {
+            font-size: 1.5rem;
+            color: #00f7ff;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00f7ff;
+        }
+              /* Timeline Race Section */
+              .timeline-container {
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .timeline-container h2 {
+            font-size: 2rem;
+            color: #00f7ff;
+        }
+
+        .race-track {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background: #111;
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .track-path {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #444;
+            transform: translateY(-50%);
+        }
+
+        .flag {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .flag:hover {
+            background-color: #ff007f;
+        }
+
+        .flag img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .flag.active {
+            background-color: #00f7ff;
+        }
+
+        .details-popup {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            color: white;
+            display: none;
+            width: 80%;
+            max-width: 600px;
+            z-index: 1001;
+        }
+
+        .details-popup h4 {
+            color: #00f7ff;
+            margin-bottom: 20px;
+        }
+
+        .details-popup p {
+            font-size: 1rem;
+            color: #bbb;
+        }
+
+        .close-popup {
+            background-color: #ff007f;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .close-popup:hover {
+            background-color: #e6005c;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>NeuralEdge AI</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>AI Transforming Industries</h1>
+            <p>Discover how NeuralEdge AI is making an impact with groundbreaking AI-driven solutions.</p>
+        </div>
+    </header>
+
+    <section class="case-studies">
+        <h2>Success Stories</h2>
+        <div class="case-container">
+            <div class="case-item">
+                <img src="sponcer-1.jpg" alt="Healthcare AI">
+                <div class="case-title">AI in Healthcare</div>
+                <p class="case-desc">Revolutionizing diagnostics and personalized treatments with AI-powered solutions.</p>
+            </div>
+            <div class="case-item">
+                <img src="sponcer-2.jpg" alt="Retail AI">
+                <div class="case-title">Retail & E-commerce</div>
+                <p class="case-desc">Enhancing customer experiences and optimizing inventory management with AI.</p>
+            </div>
+            <div class="case-item">
+                <img src="sponcer-3.jpg" alt="Finance AI">
+                <div class="case-title">AI in Finance</div>
+                <p class="case-desc">Detecting fraud and automating financial analysis through advanced AI models.</p>
+            </div>
+        </div>
+    </section>
+        <!-- Race Timeline Section -->
+        <section class="timeline-container">
+            <h2>AI Innovation Race</h2>
+            <div class="race-track">
+                <div class="track-path"></div>
+    
+                <!-- Flag for Discovery Phase -->
+                <div class="flag" style="left: 5%;" onclick="showDetails('discovery')">
+                    <img src="ai.avif" alt="Discovery">
+                </div>
+    
+                <!-- Flag for Design Phase -->
+                <div class="flag" style="left: 25%;" onclick="showDetails('design')">
+                    <img src="ai.avif" alt="Design">
+                </div>
+    
+                <!-- Flag for Data Collection Phase -->
+                <div class="flag" style="left: 45%;" onclick="showDetails('data')">
+                    <img src="ai3..jpg" alt="Data">
+                </div>
+    
+                <!-- Flag for Development Phase -->
+                <div class="flag" style="left: 65%;" onclick="showDetails('development')">
+                    <img src="ai3..jpg" alt="Development">
+                </div>
+    
+                <!-- Flag for Deployment Phase -->
+                <div class="flag" style="left: 85%;" onclick="showDetails('deployment')">
+                    <img src="ai2.jpg" alt="Deployment">
+                </div>
+    
+                <!-- Flag for Support Phase -->
+                <div class="flag" style="left: 100%;" onclick="showDetails('support')">
+                    <img src="ai.avif" alt="Support">
+                </div>
+            </div>
+        </section>
+    
+        <!-- Details Popup -->
+        <div id="details-popup" class="details-popup">
+            <h4 id="popup-title">Phase Details</h4>
+            <p id="popup-description"></p>
+            <button class="close-popup" onclick="closePopup()">Close</button>
+        </div>
+    
+        <script>
+            // Show detailed information about each phase
+            function showDetails(phase) {
+                const details = {
+                    discovery: {
+                        title: "Discovery & Problem Identification",
+                        description: "In this phase, we work closely with the client to identify their business challenges, understand their objectives, and pinpoint the areas where AI can bring the most value."
+                    },
+                    design: {
+                        title: "Solution Design & Prototyping",
+                        description: "This phase focuses on designing the AI-driven solutions, brainstorming with stakeholders, and developing initial prototypes to validate the approach."
+                    },
+                    data: {
+                        title: "Data Collection & Preprocessing",
+                        description: "Data is gathered, cleaned, and transformed for AI model training. This ensures the data is of high quality and ready for building accurate AI solutions."
+                    },
+                    development: {
+                        title: "AI Model Development & Training",
+                        description: "AI models are developed using the processed data. The models are then trained and optimized to meet the client’s specific needs."
+                    },
+                    deployment: {
+                        title: "Deployment & Integration",
+                        description: "The AI solution is deployed into the client’s environment and integrated into their systems. This phase also includes user training."
+                    },
+                    support: {
+                        title: "Post-Deployment Support & Optimization",
+                        description: "After deployment, we offer ongoing support and optimization to ensure the AI solution continues to perform at its best, adapting to any changes in the business."
+                    }
+                };
+    
+                const popup = document.getElementById("details-popup");
+                const title = document.getElementById("popup-title");
+                const description = document.getElementById("popup-description");
+    
+                title.textContent = details[phase].title;
+                description.textContent = details[phase].description;
+    
+                popup.style.display = "block";
+            }
+    
+            // Close the popup
+            function closePopup() {
+                const popup = document.getElementById("details-popup");
+                popup.style.display = "none";
+            }
+        </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>NeuralEdge AI</h3>
+                <p>Innovating AI solutions to drive business success.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2025 NeuralEdge AI. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

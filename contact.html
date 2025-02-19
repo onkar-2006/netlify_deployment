@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - NeuralEdge AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset and Body */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #222;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar h1 {
+            color: #00f7ff;
+            font-size: 1.8rem;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #00f7ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, rgba(0, 247, 255, 0.7), rgba(0, 247, 255, 0.3)), url('background-image.jpg') no-repeat center center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #333;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #00f7ff;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section-content {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .contact-info .info-item {
+            background-color: #444;
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-info .info-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .info-item h3 {
+            margin-bottom: 15px;
+            color: #00f7ff;
+        }
+
+        .info-item p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .info-item a {
+            color: #00f7ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .info-item a:hover {
+            color: #00c7d3;
+        }
+
+        /* Floating Chat Button */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00f7ff;
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        footer a {
+            color: #00f7ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #00c7d3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-content {
+                font-size: 1rem;
+            }
+
+            .contact-info .info-item {
+                width: 80%;
+            }
+
+            .chat-btn {
+                padding: 12px 20px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>NeuralEdge AI</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>We’re Here to Help You</h2>
+        <p>Your next AI solution is just a click away! Get in touch with our team today.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-content">Have questions? Reach out to us today!</p>
+
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <!-- Location Info -->
+            <div class="info-item">
+                <h3>Our Location</h3>
+                <p>Pune, Maharashtra, India</p>
+            </div>
+
+            <!-- Phone Info -->
+            <div class="info-item">
+                <h3>Call Us</h3>
+                <p><a href="tel:+918625835294">+91 86258 35294</a></p>
+            </div>
+
+            <!-- Email Info -->
+            <div class="info-item">
+                <h3>Email Us</h3>
+                <p><a href="mailto:neuralegeai@gmail.com">neuralegeai@gmail.com</a></p>
+            </div>
+
+            <!-- Social Media -->
+            <div class="info-item">
+                <h3>Follow Us</h3>
+                <p>
+                    <a href="https://www.instagram.com/neuraledgeai_/" target="_blank">Instagram</a> | 
+                    <a href="https://www.linkedin.com/in/neuraledge-ai-b527a6351/" target="_blank">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Chat Button -->
+    <button onclick="window.open('YOUR_STREAMLIT_LINK', '_blank')" class="chat-btn">
+        💬 Chat with AI
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NeuralEdge AI. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
