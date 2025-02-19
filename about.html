@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NeuralEdge AI</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #121313;
+        }
+
+
+
+        /* About Content */
+        .about-container {
+            width: 85%;
+            margin: auto;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-container h2 {
+            font-size: 2.8rem;
+            color: #0d0d0e;
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            font-size: 1.2rem;
+            color: #bbb;
+            line-height: 1.8;
+            margin-top: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Video Background Section */
+        .about-video {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 60px;
+        }
+
+        .about-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.5rem;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Slight overlay for text readability */
+            border-radius: 10px;
+        }
+
+        /* Vision & Mission */
+        .vision-mission {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .vision-mission div {
+            flex: 1;
+            min-width: 300px;
+            background: #111;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 247, 255, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .vision-mission div:hover {
+            transform: scale(1.05);
+        }
+
+        .vision-mission h3 {
+            color: #30c7c7;
+            font-size: 2rem;
+        }
+
+        /* Team Section */
+        .team {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .team h2 {
+            color: #ff007f;
+            font-size: 2.8rem;
+        }
+
+        .team-members {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 255, 255, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .team-member h3 {
+            color: #2d3030;
+            margin-top: 15px;
+        }
+
+        .team-member p {
+            color: #ddd;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* Call-to-Action Section */
+        .cta {
+            background: #232424;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 60px;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            color: #fff;
+            text-decoration: none;
+            background: #ff007f;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #ff00b8;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1>NeuralEdge AI</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+           
+        </div>
+    </header>
+
+    <section class="about-container" id="about">
+        
+        <div class="about-video">
+            <video autoplay loop muted>
+                <source src="5377976-uhd_2160_3840_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="about-content">
+                <h1>About NeuralEdge AI</h1>
+            <p>Building the Future of AI, One Innovation at a Time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-mission">
+        <div>
+            <h3>Our Vision</h3>
+            <p>We envision a future where artificial intelligence is not just a tool, but a fundamental partner in shaping smarter, more efficient, and human-centric businesses. At NeuralEdge AI, our vision is to lead the transformation of industries through AI by creating solutions that are intuitive, ethical, and powerful. We aim to empower organizations to make better, faster decisions, automate complex workflows, and unlock new growth opportunities, all while keeping human values at the core of technological progress.</p>
+            <p>Our AI technologies will bridge the gap between innovation and application, enabling businesses to seamlessly integrate advanced AI solutions into their daily operations. Our commitment is to make AI accessible, scalable, and impactful for businesses of all sizes, paving the way for an AI-driven future.</p>
+        </div>
+        <div>
+            <h3>Our Mission</h3>
+            <p>Our mission is to redefine what businesses can achieve by leveraging the power of artificial intelligence. We are dedicated to building scalable and intelligent AI solutions that accelerate business growth, optimize operations, and drive creativity. At NeuralEdge AI, we believe that AI should not only solve complex problems but also foster new opportunities and ideas that lead to long-term success.</p>
+            <p>We work tirelessly to help businesses automate their workflows, predict trends with data-driven insights, and enhance customer experiences with cutting-edge AI technologies. From machine learning models that help in predicting market changes to intelligent assistants that streamline communication, our goal is to provide businesses with the tools they need to stay ahead in a competitive landscape.</p>
+            <p>Our team is focused on continuous innovation, ensuring that each solution we provide is at the forefront of AI technology. We aim to shape industries like healthcare, finance, retail, and more, by offering customized AI solutions that are both effective and ethical, helping businesses achieve more with less effort.</p>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="founder.jpg" alt="Founder">
+                <h3>Onkar Kshirsagar</h3>
+                <p>Founder & CEO</p>
+                
+            </div>
+            <!-- Add more team members here -->
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Contact us today for a personalized consultation or request a demo.</p>
+        <a href="contact.html" class="cta-btn">Request a Demo</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 NeuralEdge AI. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
